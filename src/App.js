@@ -1,6 +1,6 @@
 import "./App.css";
 import { Switch, Route, Redirect } from "react-router-dom";
-import MainPage from "./MainPage";
+import MainPage from "./component/pages/MainPage";
 import UsersPage from "./component/pages/UsersPage";
 
 function App() {

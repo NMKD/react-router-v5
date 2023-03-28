@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const Edit = ({ userId }) => {
+const EditPage = ({ userId }) => {
   const getNextUser = (param) => {
     const id = Number(param) + 1;
     return `/users/${id}`;
@@ -24,4 +24,4 @@ const Edit = ({ userId }) => {
   );
 };
 
-export default Edit;
+export default EditPage;

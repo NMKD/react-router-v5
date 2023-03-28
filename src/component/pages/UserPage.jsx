@@ -1,6 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 import Profile from "../Profile";
-import Edit from "../Edit";
+import EditPage from "./EditPage";
 
 const UserPage = ({ userId }) => {
   const { type } = useParams();
@@ -23,7 +23,7 @@ const UserPage = ({ userId }) => {
       </ul>
 
       {type === "profile" && <Profile {...{ userId }} />}
-      {type === "edit" && <Edit {...{ userId }} />}
+      {type === "edit" && <EditPage {...{ userId }} />}
     </>
   );
 };
