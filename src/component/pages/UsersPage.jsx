@@ -1,9 +1,12 @@
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useRouteMatch, Redirect } from "react-router-dom";
 import UserPage from "./UserPage";
 
 const UsersPage = () => {
   const { userId } = useParams();
+  const { url } = useRouteMatch();
   const users = [1, 2, 3, 4, 5, 6];
+
+  if (!url) return <Redirect to="/" />;
   return (
     <>
       <h1>Users page</h1>
