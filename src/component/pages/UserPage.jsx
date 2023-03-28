@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom";
+import { Link, Redirect, useParams } from "react-router-dom";
 import Profile from "../Profile";
 import EditPage from "./EditPage";
 
@@ -22,8 +22,13 @@ const UserPage = ({ userId }) => {
         </li>
       </ul>
 
-      {type === "profile" && <Profile {...{ userId }} />}
-      {type === "edit" && <EditPage {...{ userId }} />}
+      {type === "profile" ? (
+        <Profile {...{ userId }} />
+      ) : type === "edit" ? (
+        <EditPage {...{ userId }} />
+      ) : (
+        <Redirect to={`/users/${userId}`} />
+      )}
     </>
   );
 };
